@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw_layer
+    database: hive_metastore
+    schema: default
+    tables:
+      - name: raw_agriculture
+      - name: raw_buildings
+      - name: raw_fluorinated_gases
+      - name: raw_fossil_fuel_operations
+      - name: raw_manufacturing
+      - name: raw_mineral_extraction
+      - name: raw_power
+      - name: raw_transportation
+      - name: raw_waste

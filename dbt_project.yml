@@ -1,0 +1,45 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'databricks_demo'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'databricks_demo'
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['spark_utils', 'dbt_utils']
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["databricks_demo/models"]
+analysis-paths: ["databricks_demo/analyses"]
+test-paths: ["databricks_demo/tests"]
+seed-paths: ["databricks_demo/seeds"]
+macro-paths: ["databricks_demo/macros","dbt_packages/spark_utils/macros"]
+snapshot-paths: ["databricks_demo/napshots"]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/ directory
+# as tables. These settings can be overridden in the individual model files
+# using the `{{ config(...) }}` macro.
+models:
+  databricks_demo:
+    # Config indicated by + and applies to all files under models/example/
+    gold:
+      +catalog: kb_catalog1
+      +schema: kb_catalog1_schema
+    silver:
+      +catalog: kb_catalog2
+      +schema: kb_catalog2_schema

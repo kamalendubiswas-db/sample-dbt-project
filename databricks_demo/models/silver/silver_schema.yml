@@ -1,0 +1,42 @@
+
+version: 2
+
+models:
+  - name: overall_emission_data
+    description: 'Silver layer for sector wise emission data'
+    columns:
+      - name: sector
+        datatype: string
+        description: 'represents the industry sector'
+
+      - name: country
+        datatype: string
+        description: 'represents the country'
+      
+      - name: start_date
+        datatype: date
+        description: 'start date for the analysis'
+
+      - name: end_date
+        datatype: date
+        description: 'end date of the analysis'
+
+      - name: original_inventory_sector
+        datatype: string
+        description: 'industry sub sector'
+
+      - name: gas
+        datatype: string
+        description: 'represents the emitted gas'
+
+      - name: emissions_quantity
+        datatype: string
+        description: 'quantity of gas emission'
+
+      - name: emissions_quantity_units
+        datatype: string
+        description: 'unit of gas quantity'
+
+      - name: created_date
+        datatype: string
+        description: 'record created date'

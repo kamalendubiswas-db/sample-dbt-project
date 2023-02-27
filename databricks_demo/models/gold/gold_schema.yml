@@ -1,0 +1,39 @@
+
+version: 2
+
+models:
+  - name: emission_trend
+    description: 'Sector wise emission trend'
+    columns:
+      - name: sector
+        datatype: string
+        description: 'represents the industry sector'
+
+      - name: year
+        datatype: string
+        description: 'represents the year of analysis'
+
+      - name: megatonne_emissions_quantity
+        datatype: double
+        description: 'quantity of emitted gas in mega tonne'
+        
+  - name: gas_trend
+    description: 'Sector wise emission trend'
+    columns:
+      - name: sector
+        datatype: string
+        description: 'represents the industry sector'
+
+      - name: year
+        datatype: string
+        description: 'represents the year of analysis'
+
+      - name: gas
+        datatype: string
+        description: 'identifies the emitted gas'
+
+      - name: megatonne_emissions_quantity
+        datatype: double
+        description: 'quantity of emitted gas in mega tonne'
+
+  
